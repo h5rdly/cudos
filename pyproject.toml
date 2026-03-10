@@ -4,4 +4,11 @@ version = "0.1.0"
 description = "Postgres 17 mocker"
 readme = "README.md"
 requires-python = ">=3.12"
+dependencies = [
+    "sqlglot>=29.0.1",
+]
 
+[project.optional-dependencies]
+test = [
+    "asyncpg >=0.31",
+]
