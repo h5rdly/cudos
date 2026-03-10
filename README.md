@@ -7,7 +7,7 @@
 
 ##  Prerequisites
 
-Cudos uses [sqlglot](https://github.com/tobymao/sqlglot). 
+Cudos uses [sqlglot](https://github.com/tobymao/sqlglot) for converting Postgres SQL syntax to SQLite. 
 
 Install the fast variant via - 
 
