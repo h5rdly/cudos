@@ -2,7 +2,7 @@
 
 # Cudos
 
-**Your PG17 tests, without PG17**
+**PG17 server mimic / emulator for tests and local k8s / k3s setups**
 
 ##  Prerequisites
 
