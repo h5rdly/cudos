@@ -371,21 +371,5 @@ async def main():
     print(f"\nAll tests passed, total time: {time.time() - start:.2f}s")
 
 
-'''
-1. Implement Parameter Injection (Priority #1)
-
-Currently, your B (Bind) message parsing extracts parameter values, but you aren't substituting them into the query.
-The Problem: asyncpg sends INSERT INTO x VALUES ($1) and sends ['val'] separately. sqlglot might transpile 
-$1 to ?, but you need to pass the list of parameters into self.cursor.execute(sql, parameters).
-The Fix: Store parameters in self.portal_params during the Bind phase and retrieve them in the Execute phase to pass to SQLite.
-
-3. Handling pg_catalog Introspection
-
-Tools like DBeaver or ORMs (Django/SQLAlchemy) query pg_catalog tables (pg_type, pg_attribute, pg_constraint) on startup to map types.
-Feature: Your CatalogManager is a good start, but you need to actally map the OIDs correctly.
-
-Action: If your app uses UUIDs, you must add the UUID OID (2950) to your pg_type mock, or the client will treat UUIDs as strings (or crash).
-'''
-
 if __name__ == "__main__":
     asyncio.run(main())
