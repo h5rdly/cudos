@@ -1,0 +1,7 @@
+[project]
+name = "cudos"
+version = "0.1.0"
+description = "Postgres 17 mocker"
+readme = "README.md"
+requires-python = ">=3.12"
+
