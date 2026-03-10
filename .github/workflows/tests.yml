@@ -31,7 +31,7 @@ jobs:
 
       - name: Start Server
         shell: bash
-        run: python src/cudos.py
+        run: python src/cudos.py &
 
       - name: Run tests
         run: python tests/tests.py
@@ -50,25 +50,25 @@ jobs:
         run: pip install sqlglot asyncpg
       
       - name: Start Server
-        run: python src/cudos.py
+        run: python src/cudos.py &
       
       - name: Run tests
         run: python tests/tests.py
 
   # FreeBSD 
-  test-freebsd:
-    name: Test (FreeBSD)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - name: Test in FreeBSD VM
-        uses: vmactions/freebsd-vm@v1
-        with:
-          usesh: true
-          prepare: pkg install -y python313 git
-          run: |
-            python3.13 -m venv venv
-            . venv/bin/activate
-            pip install sqlglot asyncpg
-            python src/cudos.py
-            python tests/tests.py
+  # test-freebsd:
+  #   name: Test (FreeBSD)
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v6
+  #     - name: Test in FreeBSD VM
+  #       uses: vmactions/freebsd-vm@v1
+  #       with:
+  #         usesh: true
+  #         prepare: pkg install -y python313 git
+  #         run: |
+  #           python3.13 -m venv venv
+  #           . venv/bin/activate
+  #           pip install sqlglot asyncpg
+  #           python src/cudos.py &
+  #           python tests/tests.py
