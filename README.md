@@ -14,6 +14,7 @@ Install the fast variant via -
 `pip install sqlglotc sqlglot`
 
 Or - 
+
 `pip install sqlglot[c]`
 
 
