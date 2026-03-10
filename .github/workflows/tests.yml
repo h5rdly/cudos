@@ -27,7 +27,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install build dependencies
-        run: pip install sqlglotc sqlglot asyncpg
+        run: pip install sqlglot asyncpg
 
       - name: Start Server
         shell: bash
@@ -47,7 +47,7 @@ jobs:
       - name: Install Alpine build deps
         run: apk add --no-cache git patchelf
       - name: Install dependencies
-        run: pip install sqlglotc sqlglot asyncpg
+        run: pip install sqlglot asyncpg
       
       - name: Start Server
         run: python src/cudos.py
@@ -69,6 +69,6 @@ jobs:
           run: |
             python3.13 -m venv venv
             . venv/bin/activate
-            pip install sqlglotc sqlglot asyncpg
+            pip install sqlglot asyncpg
             python src/cudos.py
             python tests/tests.py
