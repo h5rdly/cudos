@@ -13,7 +13,7 @@ Install the fast variant via -
 
 `pip install sqlglotc sqlglot`
 
-Or - 
+or - 
 
 `pip install sqlglot[c]`
 
@@ -25,7 +25,7 @@ Start the server -
 python3 cudos.py
 ```
 
-Run supplid tests via - 
+Run supplid tests - 
 ```python
 python3 tests.py
 ```
